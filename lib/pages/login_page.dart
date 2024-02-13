@@ -1,3 +1,4 @@
+import 'package:event_hub/pages/on_boarding_page.dart';
 import 'package:event_hub/utils/constants/colors.dart';
 import 'package:event_hub/utils/theme/custom_themes/elevated_button_theme.dart';
 import 'package:event_hub/utils/theme/custom_themes/text_theme.dart';
@@ -83,7 +84,9 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: (){
+                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const OnBoardingPage()));
+                        },
                         style:
                             TElevatedButtonTheme.lightElevatedButtonTheme.style,
                         child: const Text('Im new to Event-Hub'),
