@@ -21,7 +21,7 @@ class OnBoardingPageName extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  const Gap(200),
+                  const Gap(170),
                   Container(
                     alignment: Alignment.center,
                     child: Text(
@@ -47,7 +47,7 @@ class OnBoardingPageName extends StatelessWidget {
                       .copyWith(
                           padding: const MaterialStatePropertyAll(
                               EdgeInsets.symmetric(
-                                  vertical: 18, horizontal: 153))),
+                                  vertical: 18, horizontal: 150))),
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => const OnboardingPageEmail(),),);

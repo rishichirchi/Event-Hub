@@ -22,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 20)
-                    .copyWith(left: 8, right: 20, top: 290),
+                    .copyWith(left: 8, right: 20, top: 250),
                 alignment: Alignment.center,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
               Align(
                 alignment: Alignment.bottomLeft,
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.33,
+                  height: MediaQuery.of(context).size.height * 0.28,
                   alignment: Alignment.center,
                   width: double.infinity,
                   padding:
@@ -92,8 +92,8 @@ class _LoginPageState extends State<LoginPage> {
                           );
                         },
                         style:
-                            TElevatedButtonTheme.lightElevatedButtonTheme.style,
-                        child: const Text('Im new to Event-Hub'),
+                            TElevatedButtonTheme.lightElevatedButtonTheme.style!.copyWith(padding: MaterialStatePropertyAll(EdgeInsets.symmetric(horizontal: 90, vertical: 18))),
+                        child: const Text('Im new to Event-Hub', textAlign: TextAlign.start,),
                       ),
                       const Gap(6),
                       Row(
