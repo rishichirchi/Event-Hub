@@ -1,4 +1,4 @@
-import 'package:event_hub/pages/on_boarding_page.dart';
+import 'package:event_hub/pages/onboarding_pages/name.dart';
 import 'package:event_hub/utils/constants/colors.dart';
 import 'package:event_hub/utils/theme/custom_themes/elevated_button_theme.dart';
 import 'package:event_hub/utils/theme/custom_themes/text_theme.dart';
@@ -84,8 +84,12 @@ class _LoginPageState extends State<LoginPage> {
                   child: Column(
                     children: [
                       ElevatedButton(
-                        onPressed: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const OnBoardingPage()));
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const OnBoardingPageName(),
+                            ),
+                          );
                         },
                         style:
                             TElevatedButtonTheme.lightElevatedButtonTheme.style,
@@ -115,8 +119,15 @@ class _LoginPageState extends State<LoginPage> {
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('By continuing, I agree with the ', style: TTextTheme.lightTextTheme.labelMedium,),
-                          Text('terms and conditions, privacy policy', style: TTextTheme.lightTextTheme.labelLarge!.copyWith(color: AppColors.secondaryDarkColor),),
+                          Text(
+                            'By continuing, I agree with the ',
+                            style: TTextTheme.lightTextTheme.labelMedium,
+                          ),
+                          Text(
+                            'terms and conditions, privacy policy',
+                            style: TTextTheme.lightTextTheme.labelLarge!
+                                .copyWith(color: AppColors.secondaryDarkColor),
+                          ),
                         ],
                       ),
                     ],

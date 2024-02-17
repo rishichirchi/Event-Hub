@@ -1,10 +1,13 @@
+import 'package:event_hub/pages/onboarding_pages/email.dart';
+import 'package:event_hub/pages/onboarding_pages/student_details.dart';
+import 'package:event_hub/utils/constants/colors.dart';
 import 'package:event_hub/utils/theme/custom_themes/elevated_button_theme.dart';
 import 'package:event_hub/utils/theme/custom_themes/text_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gap/flutter_gap.dart';
 
-class OnBoardingPage extends StatelessWidget {
-  const OnBoardingPage({super.key});
+class OnBoardingPagePhone extends StatelessWidget {
+  const OnBoardingPagePhone({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +17,7 @@ class OnBoardingPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
         child: Center(
           child: Stack(
             children: [
@@ -24,16 +27,24 @@ class OnBoardingPage extends StatelessWidget {
                   Container(
                     alignment: Alignment.center,
                     child: Text(
-                      'What`s your name?',
+                      'Please enter your phone no!',
                       style: TTextTheme.darkTextTheme.headlineLarge,
                     ),
                   ),
-                  const Gap(18),
-                  const TextField(
-                    decoration: InputDecoration(constraints: BoxConstraints(maxWidth: 300)),
-                    keyboardType: TextInputType.name,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 32),
+                  const Gap(32),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      const Icon(Icons.flag, color: AppColors.secondaryLightColor,),
+                      Expanded(child: Text('+91 - ', style: TTextTheme.darkTextTheme.headlineLarge,)),
+                      const TextField(
+                        decoration: InputDecoration(
+                            constraints: BoxConstraints(maxWidth: 250)),
+                        keyboardType: TextInputType.phone,
+                        textAlign: TextAlign.center,
+                        style: TextStyle(fontSize: 32, color: AppColors.secondaryLightColor),
+                      ),
+                    ],
                   ),
                 ],
               ),
@@ -46,7 +57,13 @@ class OnBoardingPage extends StatelessWidget {
                           padding: const MaterialStatePropertyAll(
                               EdgeInsets.symmetric(
                                   vertical: 18, horizontal: 153))),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const OnboardingPageStudentDetails(),
+                      ),
+                    );
+                  },
                   child: const Row(
                     children: [
                       Text(
